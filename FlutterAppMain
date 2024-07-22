@@ -1,0 +1,86 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'My First App',
+      home: MyPage(),
+    );
+  }
+}
+
+class MyPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: const Color.fromARGB(255, 158, 209, 235),
+        title: Text('My First App', style: TextStyle(
+          color: const Color.fromARGB(255, 19, 58, 125),
+          fontSize: 32,),),
+        centerTitle: true,
+      ),
+      body: Container(
+        margin: EdgeInsets.only(top: 20, bottom: 20),
+        child: ListView(
+        children: [
+          Text("안녕하세요! (⁎ᴗ͈ ⩊ ᴗ͈⁎)",
+            textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 20,)
+          ),
+          CatImage(),
+          Text("무슨 내용을 넣어야할지 모르겠어서..\n냅다 고양이 사진들을 넣었어요 하핳\n이거 어렵긴 한데 은근 재밌네요 ⸜(*ˊᗜˋ*)⸝", 
+            textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 16,)
+          ),
+          Info(),
+         ],
+      ),
+      )
+    );
+  }
+}
+
+class CatImage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        margin: EdgeInsets.only(top: 20, left: 100, right: 100, bottom: 20),
+        child: Column(children: [
+          Image.network(
+          'https://ifh.cc/g/Qc7gxf.png',
+          fit: BoxFit.cover,),
+          SizedBox(height: 30,),
+          Image.network(
+          'https://ifh.cc/g/qFpLcd.png',
+          fit: BoxFit.cover,),
+          SizedBox(height: 30,),
+          Image.network(
+          'https://ifh.cc/g/lgkL23.png',
+          fit: BoxFit.cover,),
+        ],)
+      );
+  }
+}
+
+class Info extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.only(top:50, left: 50, right: 50),
+      alignment: Alignment.center,
+      color: Color.fromARGB(255, 211, 234, 244),
+      child: Text("연락처\n전화번호: 010-3033-9929\n인스타그램: @Se0_yeon129",
+        textAlign: TextAlign.center,
+        style: TextStyle(fontSize: 16)
+      )
+    );
+  }
+}
