@@ -120,9 +120,9 @@ class EditTodoPage extends StatelessWidget {
             TextButton(
               onPressed: () {
                 Navigator.pop(context);
-                
+                print("수정 완료!");
               },
-              child: Text('할 일 수정'),
+              child: Text('수정 완료'),
             ),
           ],
         ),
